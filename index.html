@@ -1,24 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        /* 0 0 1 */
-        button {
-            background-color: blue;
-        }
-
-        /* 0 1 0 */
-        .btn-sucesso {
-            background-color: green;
-        }
-
-        /* 011 > 010 */
-    </style>
+    <link rel="stylesheet" href="smacss/base.css">
+    <link rel="stylesheet" href="smacss/layout.css">
+    <link rel="stylesheet" href="smacss/module.css">
+    <link rel="stylesheet" href="smacss/tema-a.css">
+    <link rel="stylesheet" href="smacss/tema-b.css">
 </head>
-<body>
-    <button class="btn-sucesso">Enviar mensagem</button>   
+
+<body class="tema-b">
+    <div id="header">
+        <div class="container">
+            <h1 class="title">Nome do site</h1>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Produtos</a>
+                    </li>
+                    <li>
+                        <a href="#">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion">
+            <header class="accordion-header">
+                Nome do accordion
+            </header>
+            <p class="accordion-content">
+                Conteudo
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="mensagem mensagem-is-error">
+                <h5 class="mensagem-titulo">Atenção</h5>
+                <p class="mensagem-conteudo">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem enim minima consectetur rem laborum
+                    atque tempora consequuntur sunt repellendus voluptatibus consequatur animi, sed asperiores harum
+                    illum nemo nostrum natus non!
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const accordions = document.querySelectorAll('.accordion-header');
+        accordions.forEach(accordion => {
+            accordion.addEventListener('click', function () {
+                // Alternar a classe no elemento pai diretamente
+                this.parentNode.classList.toggle('accordion-is-open');
+            });
+        });
+    </script>
 </body>
+
 </html>
